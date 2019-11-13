@@ -28,26 +28,47 @@ function showPost(post) {
 */
 
 
+function show(){
+    document.querySelector("#nav").classList.toggle("hide")
+}
 
 
+function getNav(){
+    console.log('get nav running')
+    fetch("http://cosmicstryder.dk/wordpress/wp-json/wp/v2/categories")
+		.then(res => res.json())
+		.then(getCategory)
+}
+function getCategory(categoriesJson) {
+	categoriesJson.forEach(function(e){
+        const newElement = document.createElement("a");
+        newElement.textContent=e.name;
+        newElement.setAttribute("href", "sub.html?id=" + e.id)
+        document.querySelector("#nav").appendChild(newElement);
+        console.log(newElement);
 
+    })
+}
+getNav();
 window.addEventListener("DOMContentLoaded", getData);
 
 function getData() {
 	const urlParams = new URLSearchParams(window.location.search);
 	const search = urlParams.get("search");
 	const id = urlParams.get("id");
+    const category = urlParams.get("category");
 
 	if (search) {
 		console.log("this is searching")
 		getSearchData();
 	} else if (id) {
 		console.log("hi mom")
-		getSingleBook();
+		//getSingleBook();
 	} else {
-		console.log("Not searching")
+		//console.log("Not searching")
 		getFrontpageData();
 	}
+
 }
 
 function getSearchData() {
@@ -57,6 +78,13 @@ function getSearchData() {
 		.then(res => res.json())
 		.then(handleData)
 }
+/*
+==========================================
+fetch category
+==========================================
+*/
+
+
 
 
 
@@ -70,7 +98,7 @@ function getFrontpageData() {
 }
 
 function showPost(post) {
-	console.log(post);
+	//console.log(post);
 
 	const template = document.querySelector(".postTemplate").content;
 	const postCopy = template.cloneNode(true);

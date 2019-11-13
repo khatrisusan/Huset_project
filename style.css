@@ -30,3 +30,6 @@ section#posts img{
     float: right;
 
 }
+.hide{
+    display: none;
+}
