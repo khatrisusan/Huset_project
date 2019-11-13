@@ -18,3 +18,15 @@ section#posts img{
     margin-left: auto;
     margin-right: auto;
 }
+
+.menu img{
+    width: 3vw;
+    height: auto;
+    margin-left: 3vw;
+}
+.filter img{
+    width: 3vw;
+    height: auto;
+    float: right;
+
+}

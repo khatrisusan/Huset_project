@@ -77,6 +77,7 @@ function showPost(post) {
 
 	postCopy.querySelector("h1").innerHTML = post.title.rendered;
     postCopy.querySelector("img").src = post.event_image.guid;
+    postCopy.querySelector("section.description p").innerHTML = post.content.rendered;
 
 
 	/*
