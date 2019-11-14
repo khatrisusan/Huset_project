@@ -7,9 +7,16 @@
     --title-font: Huset regular, sans-serif;
 
 }
+.searchElm{
+  color: var(--button-color);
+  font-size: .5em;
+    font-family: var(--text-font);
+}
 
-h1{
+h1, .date p{
     font-family: var(--header-font);
+    text-align: center;
+    font-size: 7vw;
 }
 
 
@@ -19,7 +26,7 @@ body {
 }
 
 header {
-    display: grid;
+    display: flex;
     grid-template-columns: 1fr 1fr 1fr;
 
 }
@@ -30,7 +37,7 @@ section#posts {
 }
 
 section#posts img {
-    width: 80vw;
+    width: 70vw;
     height: auto;
     display: block;
     margin-left: auto;
@@ -52,4 +59,9 @@ section#posts img {
 
 .hide {
     display: none;
+}
+.postTemplate{
+    display: flex;
+    text-align: center;
+
 }
