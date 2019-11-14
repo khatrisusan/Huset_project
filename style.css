@@ -1,27 +1,35 @@
 :root {
-  --background-color: #FCE5F1;
-  --text-color: #000000;
-  --text-color: #000000;
-  --button-color: #9D9D9C;
+    --background-color: #FCE5F1;
+    --text-color: #000000;
+    --button-color: #9D9D9C;
+    --text-font: Avenir Book, sans-serif ;
+    --header-font: Avenir medium, sans-serif ;
+    --title-font: Huset regular, sans-serif;
+
+}
+
+h1{
+    font-family: var(--header-font);
 }
 
 
-
-
-body{
-    background-color:  var(--background-color);;
+body {
+    background-color: var(--background-color);
+    ;
 }
 
-header{
+header {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 
 }
-section#posts{
-display: grid;
-	grid-template-columns: 1fr;
+
+section#posts {
+    display: grid;
+    grid-template-columns: 1fr;
 }
-section#posts img{
+
+section#posts img {
     width: 80vw;
     height: auto;
     display: block;
@@ -29,17 +37,19 @@ section#posts img{
     margin-right: auto;
 }
 
-.menu img{
+.menu img {
     width: 3vw;
     height: auto;
     margin-left: 3vw;
 }
-.filter img{
+
+.filter img {
     width: 3vw;
     height: auto;
     float: right;
 
 }
-.hide{
+
+.hide {
     display: none;
 }
