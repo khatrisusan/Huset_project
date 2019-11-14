@@ -46,7 +46,7 @@ function getCategory(oneItem) {
         if (e.parent === 0 && e.count > 0) {
             const newElement = document.createElement("a");
             newElement.textContent = e.name;
-            newElement.setAttribute("href", "index.html")
+            newElement.setAttribute("href", "category.html?category="+e.id)
             document.querySelector("#nav").appendChild(newElement);
             //console.log(newElement);
 
@@ -68,6 +68,10 @@ function getData() {
     } else if (id) {
         console.log("hi mom")
         //getSingleBook();
+    } else if (category) {
+        //category stuffs
+        console.log("you should be displaying category :", category)
+        getCategoryData(category)
     } else {
         //console.log("Not searching")
         getFrontpageData();
@@ -79,6 +83,13 @@ function getSearchData() {
     const urlParams = new URLSearchParams(window.location.search);
     const search = urlParams.get("search");
     fetch("http://cosmicstryder.dk/wordpress/wp-json/wp/v2/event?_embed&search=" + search)
+        .then(res => res.json())
+        .then(handleData)
+}
+function getCategoryData(cat) {
+//console.log(cat)
+
+    fetch("http://cosmicstryder.dk/wordpress/wp-json/wp/v2/event?_embed&categories=" + cat)
         .then(res => res.json())
         .then(handleData)
 }
