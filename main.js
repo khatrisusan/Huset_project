@@ -31,6 +31,9 @@ function showPost(post) {
 function show() {
     document.querySelector("#nav").classList.toggle("hide")
 }
+function showMenu() {
+    document.querySelector("#menuItem").classList.toggle("hide")
+}
 
 
 function getNav() {
