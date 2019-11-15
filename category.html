@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>WP_Test</title>
@@ -14,20 +15,20 @@
             <ul class="hide" id="nav">
 
             </ul>
-            </div>
+        </div>
         <div class="search">
-            <form action="search.html">
-                <input name="search" type="search">
+            <form class="searchElm" action="search.html">
+                <input placeholder="What are you looking for?" name="search" type="search">
                 <input type="submit" value="search">
             </form>
         </div>
-        <div class="menu" onclick="showMenu()" >
+        <div class="menu" onclick="showMenu()">
             <img src="images/menuicon.png" alt="menu icon">
-                       <ul class="hide" id="menuItem">
-                       <li><a href="volunteer.html">Volunteer</a></li>
-                       <li><a href="createEvents.html">Create Events</a></li>
-                       <li><a href="about.html">About</a></li>
-                       <li><a href="contact.html">Contact</a></li>
+            <ul class="hide" id="menuItem">
+                <li><a href="volunteer.html">Volunteer</a></li>
+                <li><a href="createEvents.html">Create Events</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
 
             </ul>
         </div>
@@ -35,11 +36,18 @@
     <section id="posts"></section>
     <template class="postTemplate">
         <img class="hero" src=" " alt=" ">
-            <h1>template title goes here</h1>
-            <section class="short description"><p>Short description</p></section>
-            <button>Show more</button>
-
+        <div class="date">
+            <p>Date</p>
+        </div>
+        <h1>template title goes here</h1>
+        <section class="description hide">
+            <p></p>
+            <button>Buy Ticket</button>
+        </section>
+        <button class="SM">Show more</button>
 
     </template>
 </body>
-<script src="main.js"></script></html>
+<script src="main.js"></script>
+
+</html>
