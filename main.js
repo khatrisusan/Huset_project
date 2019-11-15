@@ -81,7 +81,7 @@ function handleData(myData) {
 }
 
 function showPost(post) {
-    //console.log(post);
+    console.log(post);
 
     const template = document.querySelector(".postTemplate").content;
     const postCopy = template.cloneNode(true);
@@ -90,15 +90,18 @@ function showPost(post) {
     postCopy.querySelector(".date p").innerHTML = post.event_date;
     postCopy.querySelector("img").src = post.event_image.guid;
     postCopy.querySelector("section.description p").innerHTML = post.content.rendered;
+    showMore();
 
     function showMore() {
 
-        var x = document.querySelector("button.SM");
-        if (x.style.display === "none") {
-            x.style.display = "block";
-        } else {
-            x.style.display = "none";
-        }
+        postCopy.querySelector("button.SM").addEventListener("click", (clickEvent) => {
+            console.log(clickEvent)
+            console.log(clickEvent.target.parentNode)
+            clickEvent.target.previousElementSibling.classList.remove("hide")
+            // e.target.textContent = "Show Less"
+            clickEvent.target.classList.add("hide")
+        })
+
     }
 
     /*
@@ -121,9 +124,11 @@ showMore BUTTON
 ==========================================
 */
 
+//const showMoreBtn=document.querySelector("button.SM");
+//showMoreBtn.addEventListener("click", showMore())
 /*
 function showMore() {
-    //console.log("clicked")
+    console.log("clicked")
     getShowMoreData();
 
     function getShowMoreData() {
@@ -155,3 +160,4 @@ function showMore() {
 
 }
 */
+
