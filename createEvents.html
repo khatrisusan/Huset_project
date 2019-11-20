@@ -1,39 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CreateEvents</title>
+    <meta charset="UTF-8">
+    <title>create</title>
+    <meta name="robots" content="noindex, nofollow">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
 </head>
 
 <body>
-       <header>
+
+    <header>
         <div class="filter" onclick="show()">
             <img src="images/filtericon.png" alt="filter icon">
             <ul class="hide" id="nav">
 
             </ul>
-            </div>
+        </div>
         <div class="search">
-            <form action="search.html">
-                <input name="search" type="search">
-                <input type="submit" value="search">
+            <form class="searchElm" action="search.html">
+                <input id="input" placeholder="What are you looking for?" name="search" >
+                <button type="submit" class="searchButton">
+                    <i class="fa fa-search"></i>
+                </button>
             </form>
         </div>
-        <div class="menu" onclick="showMenu()" >
-            <img src="images/menuicon.png" alt="menu icon">
-                       <ul class="hide" id="menuItem">
-                       <li><a href="volunteer.html">Volunteer</a></li>
-                       <li><a href="createEvents.html">Create Events</a></li>
-                       <li><a href="about.html">About</a></li>
-                       <li><a href="contact.html">Contact</a></li>
+        <div class="header">
+            <input type="checkbox" id="chk">
+            <label for="chk" class="show-menu-btn">
+               <i class="fas fa-bars"></i>
+            </label>
 
+            <ul class="menu">
+                <a href="volunteer.html">Volunteer</a>
+                <a href="createEvents.html">Create Events</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <label for="chk" class="hide-menu-btn">
+                    <i class="fas fa-times"></i>
+                </label>
             </ul>
         </div>
     </header>
 
+    <a href="index.html"><img class="logo" src="../images/logo.png"></a>
 
-    <script src="main.js"></script>
 </body>
-</html>
+<script src="main.js"></script></html>

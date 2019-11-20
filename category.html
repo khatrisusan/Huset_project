@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>WP_Test</title>
     <link rel="stylesheet" href="style.css">
-
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -18,8 +18,10 @@
         </div>
         <div class="search">
             <form class="searchElm" action="search.html">
-                <input placeholder="What are you looking for?" name="search" type="search">
-                <input type="submit" value="search">
+                <input id="input" placeholder="What are you looking for?" name="search" >
+                <button type="submit" class="searchButton">
+                    <i class="fa fa-search"></i>
+                </button>
             </form>
         </div>
         <div class="menu" onclick="showMenu()">
@@ -42,12 +44,12 @@
         <h1>template title goes here</h1>
         <section class="description hide">
             <p></p>
+            <p class="price"></p>
             <button>Buy Ticket</button>
         </section>
         <button class="SM">Show more</button>
 
     </template>
+    <a href="index.html"><img class="logo" src="../images/logo.png"></a>
 </body>
-<script src="main.js"></script>
-
-</html>
+<script src="main.js"></script></html>

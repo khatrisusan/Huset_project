@@ -2,18 +2,29 @@
     --background-color: #FCE5F1;
     --text-color: #000000;
     --button-color: #9D9D9C;
-    --text-font: Avenir Book, sans-serif ;
-    --header-font: Avenir medium, sans-serif ;
+    --text-font: "Avenir Book", sans-serif;
+    --header-font: "Avenir medium", sans-serif;
     --title-font: Huset regular, sans-serif;
 
 }
-.searchElm{
-  color: var(--button-color);
-  font-size: .5em;
+
+/*#posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}*/
+
+.searchElm {
+    color: var(--button-color);
+    font-size: .5em;
     font-family: var(--text-font);
 }
 
-h1, .date p{
+html {
+    scroll-behavior: smooth;
+}
+
+h1,
+.date p {
     font-family: var(--header-font);
     text-align: center;
     font-size: 7vw;
@@ -26,14 +37,19 @@ body {
 }
 
 header {
+    overflow-x: hidden;
+    text-align: cener;
     display: flex;
-    grid-template-columns: 1fr 1fr 1fr;
+    position: fixed;
+    justify-content: space-between;
+     margin:0 6vw;
 
 }
-
-section#posts {
-    display: grid;
-    grid-template-columns: 1fr;
+.header, .search, .filter{
+   padding-left: 2.5vw;
+}
+img.hero {
+    padding-top: 10vw;
 }
 
 section#posts img {
@@ -44,14 +60,8 @@ section#posts img {
     margin-right: auto;
 }
 
-.menu img {
-    width: 3vw;
-    height: auto;
-    margin-left: 3vw;
-}
-
 .filter img {
-    width: 3vw;
+    width: 8vw;
     height: auto;
     float: right;
 
@@ -60,8 +70,165 @@ section#posts img {
 .hide {
     display: none;
 }
-.postTemplate{
+
+.postTemplate {
     display: flex;
     text-align: center;
 
+}
+
+/*#btnContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}*/
+button {
+    font-size: 7vw;
+    display: block;
+    margin: 0 auto;
+    border: 1px solid var(--text-color);
+    background-color: var(--button-color);
+    border-radius: 25px;
+    margin-bottom: 13vw;
+}
+
+div.search {
+    width: 55vw;
+}
+
+.logo {
+    width: 3vw;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    margin-left: 8vw;
+    margin-top: 11vw;
+}
+
+section.description p {
+    font-family: var(--text-font);
+}
+
+.searchElm {
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+
+#input {
+    width: 100%;
+    border: 3px solid #000;
+    text-align: center;
+    border-right: none;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: var(--text-color);
+}
+
+.searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid #000;
+    background: transparent;
+    text-align: center;
+    color: #000;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+ul {
+    list-style-type: none;
+    background: var(--button-color);
+    height: 100vh;
+    width: 100vw;
+}
+
+ul li a {
+    text-decoration: none;
+}
+
+ul.custom-links {
+    display: none;
+}
+
+
+.menu {
+    float: right;
+    line-height: auto;
+    background-color: #FFFBFD;
+}
+
+.menu a {
+    font-family: var(--text-font);
+    color: #fff;
+    font-size: 7vw;
+    background-color: var(--button-color);
+    text-transform: capitalize;
+    text-decoration: none;
+    padding: 0 0px;
+    transition: 0.4s;
+    border-radius: 80px;
+    margin-bottom: 13vw;
+
+}
+
+.show-menu-btn,
+.hide-menu-btn {
+    transition: 0.4s;
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+.show-menu-btn {
+    float: right;
+}
+
+.menu a:hover,
+.show-menu-btn:hover,
+.hide-menu-btn:hover {
+    color: #000;
+    cursor: pointer;
+}
+
+#chk {
+    position: absolute;
+    visibility: hidden;
+    z-index: -1111;
+}
+
+.show-menu-btn,
+.hide-menu-btn {
+    display: block;
+}
+
+.menu {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: ;
+    right: -100%;
+    top: -2vw;
+    text-align: center;
+    padding: 80px 0;
+    line-height: normal;
+    transition: 0.7s;
+}
+
+.menu a {
+    display: block;
+    padding: 4rem;
+}
+
+.hide-menu-btn {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+}
+
+#chk:checked ~ .menu {
+    right: 0px;
 }

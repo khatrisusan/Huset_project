@@ -9,7 +9,7 @@ function showMenu() {
 
 function getNav() {
     //console.log('get nav running')
-    fetch("http://cosmicstryder.dk/wordpress/wp-json/wp/v2/categories")
+    fetch("http://cosmicstryder.dk/wordpress/wp-json/wp/v2/categories?per_page=100&exclude=5+7")
         .then(res => res.json())
         .then(getCategory)
 }
@@ -51,12 +51,14 @@ function getData() {
         getFrontpageData();
     }
 
+
 }
+
 
 function getSearchData() {
     const urlParams = new URLSearchParams(window.location.search);
     const search = urlParams.get("search");
-    fetch("http://cosmicstryder.dk/wordpress/wp-json/wp/v2/event?_embed&search=" + search)
+    fetch("http://cosmicstryder.dk/wordpress/wp-json/wp/v2/event?_embed&per_page=100&search=" + search)
         .then(res => res.json())
         .then(handleData)
 }
@@ -64,14 +66,14 @@ function getSearchData() {
 function getCategoryData(cat) {
     //console.log(cat)
 
-    fetch("http://cosmicstryder.dk/wordpress/wp-json/wp/v2/event?_embed&categories=" + cat)
+    fetch("http://cosmicstryder.dk/wordpress/wp-json/wp/v2/event?_embed&per_page=100&categories=" + cat)
         .then(res => res.json())
         .then(handleData)
 }
 
 
 function getFrontpageData() {
-    fetch("http://cosmicstryder.dk/wordpress/wp-json/wp/v2/event?_embed")
+    fetch("http://cosmicstryder.dk/wordpress/wp-json/wp/v2/event?_embed&per_page=100")
         .then(res => res.json())
         .then(handleData)
 }
@@ -89,7 +91,9 @@ function showPost(post) {
     postCopy.querySelector("h1").innerHTML = post.title.rendered;
     postCopy.querySelector(".date p").innerHTML = post.event_date;
     postCopy.querySelector("img").src = post.event_image.guid;
-    postCopy.querySelector("section.description p").innerHTML = post.content.rendered;
+    postCopy.querySelector(".description p").innerHTML = post.content.rendered;
+
+    postCopy.querySelector("section.description p:nth-child(2)").innerHTML ="Price :" + post.price+ " DKK";
     showMore();
 
     function showMore() {
@@ -117,47 +121,3 @@ change DOM CONTENT
     document.querySelector("#posts").appendChild(postCopy);
 
 }
-
-/*
-==========================================
-showMore BUTTON
-==========================================
-*/
-
-//const showMoreBtn=document.querySelector("button.SM");
-//showMoreBtn.addEventListener("click", showMore())
-/*
-function showMore() {
-    console.log("clicked")
-    getShowMoreData();
-
-    function getShowMoreData() {
-        fetch("http://cosmicstryder.dk/wordpress/wp-json/wp/v2/event?_embed")
-            .then(res => res.json())
-            .then(handleData)
-    }
-
-    function handleData(myData) {
-        myData.forEach(showPost);
-    }
-
-    function showPost(post) {
-        console.log(post);
-
-        const myTemplate = document.querySelector("#template2").content;
-        const postCopy2 = myTemplate.cloneNode(true);
-
-        //const addData = document.createElement("p")
-        //p.textContent=post.content.rendered;
-        postCopy2.querySelector("p.container").innerHTML = post.content.rendered;
-        //postCopy2.querySelector(".container").textContent= post.content.rendered;
-
-        document.querySelector(".post").appendChild(postCopy2);
-
-    }
-
-
-
-}
-*/
-
