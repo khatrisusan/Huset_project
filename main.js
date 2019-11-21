@@ -1,6 +1,30 @@
+const filterBtn = document.querySelector("div.filter img");
+filterBtn.addEventListener("click", show);
+
+const img = document.createElement('img');
+img.src = "images/cross.png";
+img.id="close";
+img.classList.add("hide");
+
+document.querySelector('.filter').appendChild(img);
+
 function show() {
-    document.querySelector("#nav").classList.toggle("hide")
+    document.querySelector("#nav").classList.toggle("hide");
+    console.log("show")
+    document.querySelector("img#close").classList.toggle("hide");
+    document.querySelector(".search").classList.toggle("hide");
+    document.querySelector(".filter img").classList.toggle("hide");
+    document.querySelector(".show-menu-btn").style.display="none";
+
+    document.querySelector("img#close").addEventListener("click", () => {
+        show();
+        document.querySelector(".show-menu-btn").style.display="block";
+    });
 }
+
+
+
+
 
 function showMenu() {
     document.querySelector("#menuItem").classList.toggle("hide")
@@ -83,7 +107,7 @@ function handleData(myData) {
 }
 
 function showPost(post) {
-    console.log(post);
+    // console.log(post);
 
     const template = document.querySelector(".postTemplate").content;
     const postCopy = template.cloneNode(true);
@@ -93,14 +117,14 @@ function showPost(post) {
     postCopy.querySelector("img").src = post.event_image.guid;
     postCopy.querySelector(".description p").innerHTML = post.content.rendered;
 
-    postCopy.querySelector("section.description p:nth-child(2)").innerHTML ="Price :" + post.price+ " DKK";
+    postCopy.querySelector("section.description p:nth-child(2)").innerHTML = "Price :" + post.price + " DKK";
     showMore();
 
     function showMore() {
 
         postCopy.querySelector("button.SM").addEventListener("click", (clickEvent) => {
-            console.log(clickEvent)
-            console.log(clickEvent.target.parentNode)
+          //  console.log(clickEvent)
+            //console.log(clickEvent.target.parentNode)
             clickEvent.target.previousElementSibling.classList.remove("hide")
             // e.target.textContent = "Show Less"
             clickEvent.target.classList.add("hide")

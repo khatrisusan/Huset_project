@@ -15,7 +15,7 @@
 
 .searchElm {
     color: var(--button-color);
-    font-size: .5em;
+    font-size: 8vw;
     font-family: var(--text-font);
 }
 
@@ -37,19 +37,17 @@ body {
 }
 
 header {
-    overflow-x: hidden;
     text-align: cener;
     display: flex;
-    position: fixed;
     justify-content: space-between;
-     margin:0 6vw;
+    margin: 0 6vw;
 
 }
-.header, .search, .filter{
-   padding-left: 2.5vw;
-}
-img.hero {
-    padding-top: 10vw;
+
+.header,
+.search,
+.filter {
+    padding-left: 2.5vw;
 }
 
 section#posts img {
@@ -90,6 +88,7 @@ button {
     background-color: var(--button-color);
     border-radius: 25px;
     margin-bottom: 13vw;
+    margin-bottom: 20vw;
 }
 
 div.search {
@@ -98,7 +97,7 @@ div.search {
 
 .logo {
     width: 3vw;
-    position: fixed;
+    position: absolute;
     z-index: 1;
     top: 0;
     margin-left: 8vw;
@@ -110,9 +109,11 @@ section.description p {
 }
 
 .searchElm {
-    width: 100%;
+    width: auto;
+    height: 18vw;
     position: relative;
     display: flex;
+    margin-bottom: -4rem;
 }
 
 #input {
@@ -121,20 +122,20 @@ section.description p {
     text-align: center;
     border-right: none;
     padding: 5px;
-    height: 20px;
-    border-radius: 5px 0 0 5px;
+    height: 8vw;
+    border-radius: 20px 0 0 20px;
     outline: none;
     color: var(--text-color);
 }
 
 .searchButton {
-    width: 40px;
-    height: 36px;
+    width: 9.5vw;
+    height: 9.5vw;
     border: 1px solid #000;
     background: transparent;
     text-align: center;
     color: #000;
-    border-radius: 0 5px 5px 0;
+    border-radius: 0 20px 20px 0;
     cursor: pointer;
     font-size: 20px;
 }
@@ -158,7 +159,7 @@ ul.custom-links {
 .menu {
     float: right;
     line-height: auto;
-    background-color: #FFFBFD;
+    background-color: var(--background-color);
 }
 
 .menu a {
@@ -178,13 +179,8 @@ ul.custom-links {
 .show-menu-btn,
 .hide-menu-btn {
     transition: 0.4s;
-    font-size: 30px;
+    font-size: 8vw;
     cursor: pointer;
-    display: none;
-}
-
-.show-menu-btn {
-    float: right;
 }
 
 .menu a:hover,
@@ -220,7 +216,10 @@ ul.custom-links {
 
 .menu a {
     display: block;
-    padding: 4rem;
+   margin-left: 20vw;
+    margin-right: 20vw;
+    margin-top: 10vw;
+    padding: 1.2rem;
 }
 
 .hide-menu-btn {
@@ -231,4 +230,135 @@ ul.custom-links {
 
 #chk:checked ~ .menu {
     right: 0px;
+}
+
+/*
+==========================================
+styling static page
+==========================================
+*/
+MAIN {
+    margin: 10vw;
+    padding-top: -10vw;
+}
+
+main > img {
+    margin-top: -10vw;
+    margin-left: 3vw;
+    width: 70vw;
+}
+
+p.bold {
+    text-transform: uppercase;
+    font-family: var(--title-font);
+    font-size: 4.5VW;
+    text-align: center;
+}
+
+.topic > p {
+    font-family: var(--header-font);
+    font-size: 1.3rem;
+}
+
+p.p1,
+p.p3 {
+    font-family: var(--header-font);
+    font-size: 1.2rem;
+}
+
+.form p.p3 {
+    font-size: 2rem;
+}
+
+p.p2 {
+    font-family: var(--text-font);
+}
+
+.second > p.p1 {
+    text-align: center;
+}
+
+input {
+    margin: 0;
+    display: block;
+    padding: 0.5rem;
+    font-size: 2rem;
+}
+
+button.send {
+    margin: 0;
+    height: 2rem;
+    width: auto;
+    font-size: 1.5rem;
+}
+
+/*
+==========================================
+for category icon
+==========================================
+*/
+
+
+ul #nav {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    background: ;
+    right: -100%;
+    top: -2vw;
+    text-align: center;
+    padding: 80px 0;
+    line-height: normal;
+    transition: 0.7s;
+}
+
+ul#nav {
+    float: left;
+    line-height: auto;
+    background-color: var(--background-color);
+    margin-top: 10vw;
+    margin-left: 4vw;
+
+}
+
+ul#nav a {
+    flex-flow: row;
+    font-family: var(--text-font);
+    color: #fff;
+    font-size: 7vw;
+    background-color: var(--button-color);
+    text-transform: capitalize;
+    text-decoration: none;
+    padding: 0 0px;
+    transition: 0.4s;
+    border-radius: 80px;
+    margin-left:20vw;
+    margin-right:20vw;
+    margin-top:10vw;
+    padding: 1.2rem;
+    display: block;
+    text-align: center;
+
+}
+
+ul#nav a:hover {
+    color: #000;
+    cursor: pointer;
+}
+button:hover,a:hover{
+    cursor: pointer;
+}
+
+img#close {
+    width: 10vw;
+    position: absolute;
+    top: 0;
+    left: 8vw;
+}
+
+.hide-menu-btn {
+    position: absolute;
+    top: 2vw;
+    left: 85vw;
 }
