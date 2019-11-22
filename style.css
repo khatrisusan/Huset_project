@@ -49,6 +49,7 @@ header {
 }
 
 section#posts img {
+    margin-top: 5vw;
     width: 70vw;
     height: auto;
     display: block;
@@ -118,6 +119,7 @@ section.description p {
     width: 100%;
     border: 3px solid #000;
     text-align: center;
+    font-size: 0.8rem;
     border-right: none;
     padding: 5px;
     height: 8vw;
@@ -127,8 +129,8 @@ section.description p {
 }
 
 .searchButton {
-    width: 9.5vw;
-    height: 9.5vw;
+    width: 12vw;
+    height: 12vw;
     border: 1px solid #000;
     background: transparent;
     text-align: center;
@@ -311,8 +313,10 @@ ul#nav {
     float: left;
     background-color: var(--background-color);
     margin-top: 10vw;
-    margin-left: 4vw;
-
+    position: absolute;
+    left:0;
+    top:-10vw;
+    overflow-x: hidden;
 }
 
 ul#nav a {
