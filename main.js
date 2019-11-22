@@ -3,7 +3,7 @@ filterBtn.addEventListener("click", show);
 
 const img = document.createElement('img');
 img.src = "images/cross.png";
-img.id="close";
+img.id = "close";
 img.classList.add("hide");
 
 document.querySelector('.filter').appendChild(img);
@@ -14,11 +14,11 @@ function show() {
     document.querySelector("img#close").classList.toggle("hide");
     document.querySelector(".search").classList.toggle("hide");
     document.querySelector(".filter img").classList.toggle("hide");
-    document.querySelector(".show-menu-btn").style.display="none";
+    document.querySelector(".show-menu-btn").style.display = "none";
 
     document.querySelector("img#close").addEventListener("click", () => {
         show();
-        document.querySelector(".show-menu-btn").style.display="block";
+        document.querySelector(".show-menu-btn").style.display = "block";
     });
 }
 
@@ -123,7 +123,7 @@ function showPost(post) {
     function showMore() {
 
         postCopy.querySelector("button.SM").addEventListener("click", (clickEvent) => {
-          //  console.log(clickEvent)
+            //  console.log(clickEvent)
             //console.log(clickEvent.target.parentNode)
             clickEvent.target.previousElementSibling.classList.remove("hide")
             // e.target.textContent = "Show Less"

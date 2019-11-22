@@ -1,16 +1,26 @@
+const filterBtn = document.querySelector("div.filter img");
+filterBtn.addEventListener("click", show);
+
+const img = document.createElement('img');
+img.src = "images/cross.png";
+img.id="close";
+img.classList.add("hide");
+
+document.querySelector('.filter').appendChild(img);
+
 function show() {
-    document.querySelector("#nav").classList.remove("hide");
-    const img = document.createElement('img');
-    img.src =
-        "images/cross.png";
-    img.id="close";
-    document.querySelector('.filter').appendChild(img);
-   document.querySelector("img#close").addEventListener("click", function(){
-   console.log("hide");
-       document.querySelector("#nav").style.display="none";
-       document.querySelector("img#close").parentElement.classList.remove("hide");
-});
-    }
+    document.querySelector("#nav").classList.toggle("hide");
+    console.log("show")
+    document.querySelector("img#close").classList.toggle("hide");
+    document.querySelector(".search").classList.toggle("hide");
+    document.querySelector(".filter img").classList.toggle("hide");
+    document.querySelector(".show-menu-btn").style.display="none";
+
+    document.querySelector("img#close").addEventListener("click", () => {
+        show();
+        document.querySelector(".show-menu-btn").style.display="block";
+    });
+}
 
 
 function showMenu() {
